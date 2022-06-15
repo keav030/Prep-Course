@@ -38,6 +38,13 @@ function agregarStringInvertida() {
   // Ej: 'menem'.reverse() => menem
   // 'toni'.reverse() => 'inot'
   // Pista: Necesitarás usar "this" dentro de "reverse"
+  String.prototype.reverse = function() {
+    var aux = ""
+    for(let i=this.length-1 ; i>=0 ; i--){
+      aux = aux+this[i]
+    }
+    return aux
+  }
 }
 
 // ---------------------------------------------------------------------------//
@@ -52,16 +59,31 @@ function agregarStringInvertida() {
     //  }
 
   class Persona {
-    constructor(/*Escribir los argumentos que recibe el constructor*/) {
+    constructor(nombre, apellido, edad, dir) {
       // Crea el constructor:
-
+      this.nombre = nombre;
+      this.apellido = apellido;
+      this.edad = edad;
+      this.dir = dir;
+      this.detalle = function(){
+        return {
+          nombre: this.nombre,
+          apellido: this.apellido,
+          edad: this.edad,
+          dir: this.dir
+        }
+      }
     }
+
+    
+    
 }
 
 function crearInstanciaPersona(nombre, apellido, edad, dir) {
   //Con esta función vamos a crear una nueva persona a partir de nuestro constructor de persona (creado en el ejercicio anterior)
   //Recibirá los valores "Juan", "Perez", 22, "Saavedra 123" para sus respectivas propiedades
   //Devolver la nueva persona creada
+
 }
   
 function agregarMetodo() {
